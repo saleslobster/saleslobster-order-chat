@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Order</label>
+    <pluralLabel>Orders</pluralLabel>
+    <nameField>
+        <label>Order Number</label>
+        <type>AutoNumber</type>
+        <displayFormat>ORD-{00000}</displayFormat>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Order tracking for SalesLobster chat</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <fields>
+        <fullName>Customer_Email__c</fullName>
+        <type>Email</type>
+        <label>Customer Email</label>
+        <required>true</required>
+    </fields>
+    <fields>
+        <fullName>Customer_Phone__c</fullName>
+        <type>Phone</type>
+        <label>Customer Phone</label>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <type>Text</type>
+        <label>Status</label>
+        <length>50</length>
+        <description>Draft, Processing, Shipped, Delivered, Cancelled</description>
+    </fields>
+    <fields>
+        <fullName>Shipping_Carrier__c</fullName>
+        <type>Text</type>
+        <label>Shipping Carrier</label>
+        <length>50</length>
+        <description>FedEx, UPS, USPS, DHL</description>
+    </fields>
+    <fields>
+        <fullName>Tracking_Number__c</fullName>
+        <type>Text</type>
+        <label>Tracking Number</label>
+        <length>100</length>
+        <description>Carrier tracking ID</description>
+    </fields>
+    <fields>
+        <fullName>Estimated_Delivery__c</fullName>
+        <type>Date</type>
+        <label>Estimated Delivery</label>
+        <description>Estimated delivery date</description>
+    </fields>
+    <fields>
+        <fullName>Shipping_Address__c</fullName>
+        <type>Text</type>
+        <label>Shipping Address</label>
+        <length>255</length>
+        <description>Full shipping address</description>
+    </fields>
+    <fields>
+        <fullName>Order_Total__c</fullName>
+        <type>Currency</type>
+        <label>Order Total</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <description>Total order amount</description>
+    </fields>
+    <fields>
+        <fullName>Order_Date__c</fullName>
+        <type>Date</type>
+        <label>Order Date</label>
+        <required>true</required>
+        <description>When order was placed</description>
+    </fields>
+    <fields>
+        <fullName>Items__c</fullName>
+        <type>LongTextArea</type>
+        <label>Items</label>
+        <length>32768</length>
+        <visibleLines>3</visibleLines>
+        <description>Order items (line-item list)</description>
+    </fields>
+    <listViews>
+        <fullName>AllOrders</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Orders</label>
+    </listViews>
+</CustomObject>
